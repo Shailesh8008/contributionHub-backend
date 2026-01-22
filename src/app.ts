@@ -3,13 +3,18 @@ import cors from "cors";
 import apiRouter from "./routers/api";
 import connectDB from "./config/db";
 import cookieParser from "cookie-parser";
+import passport from "passport";
+import dotenv from "dotenv";
+dotenv.config();
+import "./config/passport";
 
 const app = express();
 connectDB();
 
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
+app.use(passport.initialize());
 app.use("/", apiRouter);
 
 const PORT = process.env.PORT || 5000;

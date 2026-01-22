@@ -5,3 +5,5 @@ const { Schema, model } = mongoose;
 const userSchema = new Schema({
   name: { type: String, require: true },
 });
+
+export default model("users", userSchema);
