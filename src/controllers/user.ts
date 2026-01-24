@@ -56,7 +56,7 @@ const githubCallback = async (req: Request, res: Response) => {
     maxAge: 7 * 24 * 60 * 60 * 1000,
   });
 
-  res.redirect("http://localhost:5173/");
+  res.redirect("https://gitcontributionhub.vercel.app/");
 };
 
 const logout = (req: Request, res: Response) => {
