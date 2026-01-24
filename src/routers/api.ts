@@ -17,4 +17,10 @@ apiRouter.get(
   userController.githubCallback,
 );
 
+apiRouter.delete("/api/logout", auth, userController.logout);
+apiRouter.get("/api/issues", userController.getIssues);
+apiRouter.get("/api/bookmarks", auth, userController.getBookmarks);
+apiRouter.delete("/api/bookmarks/:id", auth, userController.deleteBookmarks);
+apiRouter.post("/api/bookmarks/", auth, userController.createBookmarks);
+
 export default apiRouter;

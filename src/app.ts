@@ -5,11 +5,15 @@ import connectDB from "./config/db";
 import cookieParser from "cookie-parser";
 import passport from "passport";
 import dotenv from "dotenv";
+// import { fetchGithubIssues } from "./jobs/githubIssuesFetch";
+import { startGithubIssuesCron } from "./jobs/githubIssuesFetch";
 dotenv.config();
 import "./config/passport";
 
 const app = express();
 connectDB();
+// fetchGithubIssues();
+startGithubIssuesCron();
 
 app.use(cors({ origin: "http://localhost:5173", credentials: true }));
 app.use(express.json());
