@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser";
 import passport from "passport";
 import dotenv from "dotenv";
 // import { fetchGithubIssues } from "./jobs/githubIssuesFetch";
+// import { fetchRepos } from "./jobs/githubRepoFetch";
+import { startGithubRepoCron } from "./jobs/githubRepoFetch";
 import { startGithubIssuesCron } from "./jobs/githubIssuesFetch";
 dotenv.config();
 import "./config/passport";
@@ -13,6 +15,8 @@ import "./config/passport";
 const app = express();
 connectDB();
 // fetchGithubIssues();
+// fetchRepos();
+startGithubRepoCron();
 startGithubIssuesCron();
 
 app.use(

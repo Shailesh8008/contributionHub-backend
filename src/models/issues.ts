@@ -10,6 +10,8 @@ const issueSchema = new Schema({
   difficulty: { type: String, required: true },
   comments: { type: Number, required: true },
   url: { type: String, required: true },
+  stars: { type: Number, default: 0 },
+  language: { type: String, default: "" },
   createdAt: { type: Date, required: true },
   updatedAt: { type: Date },
 });
